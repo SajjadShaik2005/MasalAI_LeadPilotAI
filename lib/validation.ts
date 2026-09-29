@@ -1,0 +1,4 @@
+import { CallPrep, LeadAnalysis, Priority } from "./types";
+const priority = (value: unknown): value is Priority => value === "HOT" || value === "WARM" || value === "COLD";
+export function validAnalysis(data: unknown): data is LeadAnalysis { const x = data as LeadAnalysis; return !!x && typeof x.summary === "string" && typeof x.intent === "string" && Array.isArray(x.requirements) && Array.isArray(x.concerns) && typeof x.recommended_next_action === "string" && typeof x.suggested_response === "string" && Number.isFinite(x.priority_score) && priority(x.priority) && Array.isArray(x.priority_reasons); }
+export function validPrep(data: unknown): data is CallPrep { const x = data as CallPrep; return !!x && typeof x.opening === "string" && Array.isArray(x.emphasis_points) && Array.isArray(x.discovery_questions) && typeof x.likely_objection === "string" && typeof x.objection_response === "string" && typeof x.next_step === "string"; }

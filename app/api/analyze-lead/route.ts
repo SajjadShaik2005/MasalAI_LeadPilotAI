@@ -1,0 +1,3 @@
+import { NextResponse } from "next/server";
+import { aiErrorMessage, generateText, parseJson } from "@/lib/gemini"; import { analysisPrompt } from "@/lib/prompts"; import { validAnalysis } from "@/lib/validation"; import { Lead } from "@/lib/types";
+export async function POST(request: Request) { try { const lead = await request.json() as Lead; const raw = await generateText(analysisPrompt(lead)); const data = parseJson<unknown>(raw); if (!validAnalysis(data)) throw new Error("The AI returned an incomplete analysis."); data.priority_score = Math.max(0, Math.min(100, Math.round(data.priority_score))); return NextResponse.json(data); } catch (error) { return NextResponse.json({ error: aiErrorMessage(error) }, { status: 500 }); } }
