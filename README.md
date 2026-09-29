@@ -27,7 +27,7 @@ Gemini API (server-side only)
 
 ## AI Model
 
-The app defaults to `gemini-2.0-flash`, configurable via `GEMINI_MODEL`. All Gemini calls happen in route handlers, so `GEMINI_API_KEY` never reaches browser code. Analysis and Call Prep request JSON and validate the returned structure before display. Chat receives the selected lead, its analysis, and prior chat history, which grounds each reply.
+The app defaults to `gemini-2.5-flash`, configurable via `GEMINI_MODEL`. All Gemini calls happen in route handlers, so `GEMINI_API_KEY` never reaches browser code. Analysis and Call Prep request JSON and validate the returned structure before display. Chat receives the selected lead, its analysis, and prior chat history, which grounds each reply.
 
 ## Lead Prioritization
 
@@ -49,7 +49,7 @@ Open `http://localhost:3000`.
 | Variable | Required | Purpose |
 | --- | --- | --- |
 | `GEMINI_API_KEY` | Yes for live AI | Server-side Gemini credential |
-| `GEMINI_MODEL` | No | Gemini model; defaults to `gemini-2.0-flash` |
+| `GEMINI_MODEL` | No | Gemini model; defaults to `gemini-2.5-flash` |
 
 ## Deployment
 

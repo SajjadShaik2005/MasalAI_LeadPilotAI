@@ -1,7 +1,7 @@
 {
-  "name": "masalai",
+  "name": "leadpilot-ai",
   "version": "1.0.0",
-  "description": "",
+  "description": "AI-powered real-estate lead intelligence dashboard.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,7 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  "private": "true",
+  "private": true,
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
     "lucide-react": "^1.48.0",
